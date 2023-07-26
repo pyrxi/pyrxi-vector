@@ -8,8 +8,9 @@ int main () {
 
   std::string pyrxi[6] = {"neoxi", "mirior", "emma", "dot", "alex", "ahkto"};
 
-  arrayOutput << pyrxi[1];
-
+  for (int i = 0; i < 6; i++) {
+    arrayOutput << pyrxi[i] << ",";
+  }
   
 
   return 0;
