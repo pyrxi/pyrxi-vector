@@ -8,7 +8,7 @@ int main () {
 
   std::string pyrxi[6] = {"neoxi", "mirior", "emma", "dot", "alex", "ahkto"};
 
-  std::cout << pyrxi[1] << std::endl;
+  arrayOutput << pyrxi[1];
 
   
 
