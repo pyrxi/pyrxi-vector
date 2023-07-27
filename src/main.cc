@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -9,16 +10,21 @@ int fileInput() {
 
   std::ifstream pyrxi_vector_file("array.pyrxi"); // loads array file
 
-  if ( !pyrxi_vector_file.is_open() ) { // if the file isn't opened
+  if ( !pyrxi_vector_file.is_open() ) {
+
     std::cout << "Error: File not found";
     return 1; // file didn't load
-  }
 
-  else if ( pyrxi_vector_file.is_open() ) {
+  } else if ( pyrxi_vector_file.is_open() ) {
+    std::stringstream pyrxi_file_buffer; // buffer
+    pyrxi_file_buffer << pyrxi_vector_file.rdbuf(); // ifstream into buffer
+    std::cout << pyrxi_file_buffer.str(); // prints buffer
     return 2; // file loaded
-  }
-  else { // otherwise
+
+  } else {
+
     return 3; // it's bugged
+
   }
 }
 // end of fileInput.cc
