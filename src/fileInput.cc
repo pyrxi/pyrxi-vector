@@ -4,7 +4,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <vector>
 
 std::string fileInput() {
 
