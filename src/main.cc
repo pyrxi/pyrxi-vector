@@ -19,7 +19,7 @@ int main() {
   // test code to make sure the array works right
 
   for (int i = 0; i < output.size(); i++) {
-    std::cout << output[i];
+    std::cout << i << ". " << output[i] <<'\n';
   }
 
 }
