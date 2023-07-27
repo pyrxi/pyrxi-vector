@@ -1,3 +1,5 @@
+#include "fileInput.h"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -6,53 +8,17 @@
 
 // beginning of fileInput.cc
 
-int fileInput() {
 
-  std::ifstream pyrxi_vector_file("array.pyrxi"); // loads array file
-
-  if ( !pyrxi_vector_file.is_open() ) {
-
-    std::cout << "Error: File not found";
-    return 1; // file didn't load
-
-  } else if ( pyrxi_vector_file.is_open() ) {
-    std::stringstream pyrxi_file_buffer; // buffer
-    pyrxi_file_buffer << pyrxi_vector_file.rdbuf(); // ifstream into buffer
-    std::cout << pyrxi_file_buffer.str(); // prints buffer
-    return 2; // file loaded
-
-  } else {
-
-    return 3; // it's bugged
-
-  }
-}
 // end of fileInput.cc
 
 
 int main() {
 
-  int x = fileInput();
+  std::string x = fileInput();
 
-  if (x == 2) {
-    std::cout << "file loaded";
-  }
-  else if (x == 1) {
-    std::cout << "file did not load";
-  }
-  else {
-    std::cout << "it's bugged";
-  }
-  return 0;
+  std::cout << x;
 
-/*  std::fstream arrayOutput("array.pyrxi", std::ios::app); // Opens file
-
-  if ( !arrayOutput.is_open() ) {
-    std::cout << "file couldn't be opened";
-    return 0;
-  } // makes sure the file is opened
-
-  else {
+/*
 
     std::vector<std::string> pyrxi = {"neoxi", "mirior", "emma", "dot", "alex", "ahkto"}; // pyrxi[0] through [5] for filler text
 
