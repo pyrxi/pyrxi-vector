@@ -1,4 +1,5 @@
 #include "fileInput.h"
+#include "parseFile.h"
 
 #include <iostream>
 #include <string>
@@ -13,7 +14,9 @@ int main() {
 
   std::string x = fileInput();
 
-  std::cout << x;
+  // string x = vector<string> x = {elements separated by comma}
+
+  parseFile(x);
 
 /*
 
