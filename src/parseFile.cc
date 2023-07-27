@@ -3,20 +3,22 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <sstream>
 
 // std::vector<std::string>
 
-void parseFile(std::string string_buffer) {
+std::vector<std::string> parseFile(std::string string_buffer) {
 
-  std::cout << "it works";
+  std::vector<std::string> string_contents;
+  std::stringstream test_string;
+  test_string << string_buffer;
 
-/*  std::vector<std::string> string_contents;
-  std::string test_string;
-
-  for (int i = 0, i < 6, i++) {
-    std::getline(string_buffer, test_string, ",");
-    std::cout << test_string;
+  for (int i = 0; i < 6; i++) {
+    std::getline(test_string, string_buffer, ',');
+    string_contents.push_back(string_buffer);
   }
 
-  return*/
+  return string_contents; /*This is bad. Don't return the vector.
+                            Return a pointer to the vector in this function.
+                            Learn to implement that. */
 }
