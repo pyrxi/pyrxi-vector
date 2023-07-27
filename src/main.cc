@@ -5,14 +5,22 @@
 
 int main () {
 
-  std::ofstream arrayOutput("array.pyrxi"); // Opens file
+  std::fstream arrayOutput("array.pyrxi", std::ios::app); // Opens file
 
-  std::vector<std::string> pyrxi = {"neoxi", "mirior", "emma", "dot", "alex", "ahkto"}; // pyrxi[0] through [5] for filler text
+  if ( !arrayOutput.is_open() ) {
+    std::cout << "file couldn't be opened";
+    return 0;
+  } // makes sure the file is opened
 
-  for (int i = 0; i < 6; i++) {
-      arrayOutput << pyrxi[i] << ",";
-  } // loop through the vector 
+  else {
 
-  arrayOutput.close(); // close file
-  return 0; // quit
+    std::vector<std::string> pyrxi = {"neoxi", "mirior", "emma", "dot", "alex", "ahkto"}; // pyrxi[0] through [5] for filler text
+
+    for (int i = 0; i < 6; i++) {
+        arrayOutput << pyrxi[i] << ",";
+    } // loop through the vector
+
+    arrayOutput.close(); // close file
+    return 0; // quit
+  }
 }
