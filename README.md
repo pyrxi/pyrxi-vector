@@ -1,9 +1,11 @@
 # pyrxi-vector
 
-this is a program made exclusively for our system, designed to track our headmates in the most lightweight form we can implement.
+pyrxi-vector is a program written by our system, for our system. It is the basis of a much larger project we intend on creating when we have more experience.
 
-when it's further in development, we may do a rewrite to make the code and documentation system-agnostic, but as it stands this is mostly just a personal project we made public for the sake of showing our progress
+The program reads from a .csv file, splits off the contents into elements of a vector, and keeps the vector read-only in memory, (eventually) allowing only appended elements to the vector.
 
-to-do:
+The intent is to use this program as a system logging tool without the need of a remote database we don't have control over. While the program itself isn't all that special, the intent behind it, and later projects derived from this template, is important.
 
-- implement a minimalist CRUD system
+# Building
+
+The Makefile is broken, so you're just going to have to wait for us to update it.
